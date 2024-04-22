@@ -1,13 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=upi://pay?pa=PandaWep@ybl&pn=Ashutosh%20Goswami&am=100&tn=Pay%20100%20And%20Get%20File%20To%20Url%20Bot&cu=INR">
-    <title>Error 504</title>
-</head>
-<body>
-    <!-- Optionally, you can provide a message for users who don't have UPI support -->
-   <a href="url=upi://pay?pa=PandaWep@ybl&pn=Ashutosh%20Goswami&am=100&tn=Pay%20100%20And%20Get%20File%20To%20Url%20Bot&cu=INR">Pay Now</a>.</p>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <link id="theme-style" rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A Powerfull Telegram Bot. And 30+ Tools" />
+        <meta property="og:description" content="A Powerfull Telegram Bot. And 30+ Tools" />
+        <meta name="twitter:description" content="A Powerfull Telegram Bot. And 30+ Tools" />
+        <meta name="keywords" content="telegram bot" />
+        <meta name="author" content="Ashu Botz" />
+        <meta property="og:url" content="https://graph.org/file/2b8b8671377221740596a.jpg" />
+        <meta name="twitter:url" content="https://graph.org/file/2b8b8671377221740596a.jpg" />
+        <meta property="og:image" content="https://graph.org/file/2b8b8671377221740596a.jpg" />
+        <meta name="twitter:image" content="https://graph.org/file/2b8b8671377221740596a.jpg" />
+        <link rel="icon" href="https://graph.org/file/a4425689fac8ee9117ae4.jpg" type="image/x-icon" />
+        <title>File To Url</title>
+        <meta property="og:title" content="File To Url" />
+        <meta name="twitter:title" content="File To Url" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+        <style></style>
+        <center>
+            <div class="spinner-box">
+                <div class="configure-border-1">
+                    <div class="configure-core"></div>
+                </div>
+                <div class="configure-border-2">
+                    <div class="configure-core"></div>
+                </div>
+            </div>
+            <h1>Pay 100</h1>
+            <p>Generate UPI &nbsp;<span id="countdown">10</span>&nbsp;Seconds...</p>
+            <button class="button-92" role="button" id="paynow">Pay Now</button>
+        </center>
+    </body>
+
+    <script>
+        // Redirect function
+        function redirectToUPI() {
+            window.location.href = "upi://pay?pa=PandaWep@ybl&pn=Ashutosh%20Goswami&am=100&tn=Pay%20100%20And%20Get%20File%20To%20Url%20Bot&cu=INR";
+        }
+
+        // Countdown function
+        function countdown() {
+            var seconds = 100000;
+            var timer = setInterval(function () {
+                document.getElementById("countdown").innerText = seconds;
+                seconds--;
+                if (seconds < 0) {
+                    clearInterval(timer);
+                    redirectToUPI();
+                }
+            }, 1000);
+        }
+
+        // Call countdown function when page loads
+        window.onload = function () {
+            countdown();
+        };
+
+        // Pay Now button click event
+        document.getElementById("paynow").addEventListener("click", function () {
+            redirectToUPI();
+        });
+        // Function to check if it's daytime
+        function isDayTime() {
+            var now = new Date();
+            var hour = now.getHours();
+            return hour >= 6 && hour < 18; // Assuming 6 AM to 6 PM as daytime
+        }
+
+        // Function to switch CSS based on time of day
+        function switchTheme() {
+            var link = document.getElementById("theme-style");
+            if (isDayTime()) {
+                link.href = "https://ashubotz.github.io/Pay/light.css";
+            } else {
+                link.href = "https://ashubotz.github.io/Pay/dark.css";
+            }
+        }
+
+        // Call the switchTheme function when the page loads
+        switchTheme();
+    </script>
 </html>
+
